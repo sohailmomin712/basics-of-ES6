@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+
+<body>
+    <h1>Learning About ES6</h1>
+</body>
+
+</html>
+
+<script>
+    //arrow function
+    //in es6 a function has 3 variation
+    //arrow function
+
+    //1:basic fat arrow function
+    var a = () => {
+        console.log("This is basic arrow function")
+    }
+    a()
+
+    //2:arrow function with one parameter
+    var b = (first, second) => {
+        let result = first + second;
+        console.log(result)
+    }
+    b(12, 10)
+
+    //you can remove fat aka round brackets if u want but there should be only one parameter//
+    //for example var b =param =>{}
+    //if u are writing 2 parameters there should always be fat aka round brackets
+
+
+    //3:arrow function with implicit return
+    var c = () => 14;
+    console.log(c())
+    //arrow ke baad jo bhi likh doge wo return ho jaayega/
+
+    //implicit means jab hmne bola na ho ya likha na ho khudse//
+    //it means jab hmne khud se return na likha ho tab bhi return ho jaayega//
+
+
+</script>
