@@ -21,11 +21,24 @@
     console.log(b)
 
 
-    //Destructring in es6//
+    //Destructring of array in es6//
     const array = [11, 12, 13];
     //first declare the variable
     //then write the names of the variables 
     //then from where u want to access it like for example path
     const [x, y, z] = array;
     console.log(x, y, z)
+
+    //suppose if we have to skip the any element for an example we have to show the first and last among the three elements
+    const anotherArray = [10, 20, 30]
+    const [p,,r] = anotherArray
+    //in order to skip just use the comas ,,//
+
+
+
+    //Destructring of objects
+    const obj = { name: "sufi", age: 24 }
+    const { age } = obj;
+    //will make the variable named age and obj se ander uski value nikal lega//
+    console.log(age)
 </script>
