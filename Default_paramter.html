@@ -20,4 +20,13 @@
     DefaultParam(122);
     DefaultParam(); //this will return undefgined because value is not given but if u want the value of paramter should be 0 or any other value when the value is not given then we can give the value to paramter at the top it is nothing but the default paramter//
     //const DefaultParam = (Paramter=0) eg.(paramter=0)//
+
+    // now suppose we have 3 paramters
+    const ThreeParam = (a = 20, b = 30, c = 40) => {
+        console.log(a, b, c)
+    }
+    ThreeParam(1, 2, 3) // this will return 1,2,3
+    ThreeParam(11, 12, 13)//this will return 11,12,13
+    ThreeParam(21)//This will return 21,undefined,undefined when  const ThreeParam = (a = 20, b = 30, c = 40) => {console.log(a, b, c)} //
+    ThreeParam(10)//now this will return 10,30,40 why because the value of a will be taken as 10 as it given but value of b and c will taken as default as they are bot given//
 </script>
