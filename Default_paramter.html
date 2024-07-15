@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function with Default Parameter</title>
+</head>
+
+<body>
+    <h1>Function with Default parameter</h1>
+</body>
+
+</html>
+<script>
+    const DefaultParam = (Paramter = 1) => {
+        console.log(Paramter);
+    };
+    DefaultParam(12);
+    DefaultParam(122);
+    DefaultParam(); //this will return undefgined because value is not given but if u want the value of paramter should be 0 or any other value when the value is not given then we can give the value to paramter at the top it is nothing but the default paramter//
+    //const DefaultParam = (Paramter=0) eg.(paramter=0)//
+</script>
