@@ -1,22 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Promises</title>
 </head>
+
 <body>
     <h1>Promises in ES6</h1>
 </body>
+
 </html>
 
 <script>
-    let FirstPromise = new Promise(function(res,rej){
-        let num = Math.floor(Math.random()*10);
-        if(num<5){
-            console.log("Below")
-        }else{
-            console.log("Above")
+    //create a simple promise//
+    let ans = new Promise(function (res, rej) {
+        if (true) {
+            return res()
+        } else {
+            return rej()
         }
     })
+    ans.then(function () {
+        console.log("resolve ho gya")
+    }).catch(function () {
+        console.log("reject ho gya")
+    })
+
+
+    //checking the conditions//
+    let FirstPromise = new Promise(function (res, rej) {
+        let num = Math.floor(Math.random() * 10);
+        if (num < 5) {
+            return res()
+        } else {
+            return rej()
+        }
+    })
+    FirstPromise.then(function () {
+        console.log("Below")
+    }).catch(function () {
+        console.log("Above")
+    })
+
+    //
 </script>
