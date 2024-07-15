@@ -13,10 +13,19 @@
 
 </html>
 <script>
-    const a = [1, 2, 3];
+    //old method
     //if we want to make the copy of the array elements//
     //it can be done by old method by targetting the index value//
+    const a = [1, 2, 3];
     const b = a[1]
     console.log(b)
 
+
+    //Destructring in es6//
+    const array = [11, 12, 13];
+    //first declare the variable
+    //then write the names of the variables 
+    //then from where u want to access it like for example path
+    const [x, y, z] = array;
+    console.log(x, y, z)
 </script>
