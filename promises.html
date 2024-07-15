@@ -44,5 +44,23 @@
         console.log("Above")
     })
 
-    //
+    //few tasks are given we have to hanlde al of them asynchronously
+    //1:Utho
+    //2:nashta kro
+    //3:study kro
+    //4:kaam kro
+    //5:so jaao
+
+    let task = new Promise(function (res, rej) {
+        return res("Utho")
+    })
+    let task2 = task.then(function (data) {
+        console.log(data)
+        return new Promise(function (res, rej) {
+            return res("nashta kro")
+        })
+    })
+ let task3=new Promise(function(res,rej){
+
+ })
 </script>
