@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rest and Spread</title>
 </head>
 
@@ -14,22 +14,34 @@
 </html>
 <script>
     //... spread and rest both are denoted by ...
-    //concept is called operator overloading for eg + is used to add and + is used to concatinate
+    //This concept is called operator overloading for eg + is used to add and + is used to concatinate
 
-    //1: ...spread 
-    let a = [1, 2, 3, 4, 5, 6]
+    //1: ...spread
+    let a = [1, 2, 3, 4, 5, 6];
     // let b = a it wont copy its called refrencing//
-    let b = [...a]
+    let b = [...a];
     //this will spread all the elements's value at that place
     //basically wo a ke ander ke sb values ko wo waha ... is jagah rakh dega
-    console.log(b)
+    console.log(b);
     //spread ka matlab hai element ke saare values ko us jagah par bikher dena
     //spread use hota hai copy krne ke liye ya fir us location par kisi aur ki values bikher ne ke liye
 
+    //2: ...rest
+    //rest use hota hai jab aapko bache huve values ek variable me daalne ho
 
+    //without using rest
+    let withoutRest = (a, b, c) => {
+        //we have made 3 paramters and passed 6 arguments so the next arguments will get ignored
+        console.log(a, b, c);
+    };
+    withoutRest(1, 2, 3, 4, 5, 6);
 
-
-
-
-
+    // using the rest operator
+    let restFunc = (a, b, c, ...d) => {
+        console.log(a, b, c, d);
+        //let restFunc = (a, b, c,...d) => {console.log(a, b, c,d)}
+        //but sometimes or if we dont have to  skip or ignore those
+        //then use ... i.e rest operator and store the remaining values in a varible with any name to it
+    };
+    restFunc(1, 2, 3, 4, 5, 6);
 </script>
