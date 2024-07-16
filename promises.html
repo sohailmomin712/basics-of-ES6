@@ -51,16 +51,39 @@
     //4:kaam kro
     //5:so jaao
 
-    let task = new Promise(function (res, rej) {
+    let firstTask = new Promise(function (res, rej) {
         return res("Utho")
     })
-    let task2 = task.then(function (data) {
+
+    let secondTask = firstTask.then(function (data) {
         console.log(data)
         return new Promise(function (res, rej) {
             return res("nashta kro")
         })
     })
- let task3=new Promise(function(res,rej){
 
- })
+    let thirdTask = secondTask.then(function (data) {
+        console.log(data)
+        return new Promise(function (res, rej) {
+            return res("study kro")
+        })
+    })
+
+    let fourthTask = thirdTask.then(function (data) {
+        console.log(data)
+        return new Promise(function (res, rej) {
+            return res("Kaam kro")
+        })
+    })
+
+    let fifthTask = fourthTask.then(function (data) {
+        console.log(data)
+        return new Promise(function (res, rej) {
+            return res("so jaao")
+        })
+    })
+
+    fifthTask.then(function (data) {
+        console.log(data)
+    })
 </script>
