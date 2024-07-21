@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    * {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+
+
+    #container {
+      display: grid;
+      width: 60%;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 30px;
+      margin: auto;
+      margin-top: 50px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #container>div {
+
+      border-radius: 5px;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      background-color: white;
+
+      text-align: center;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    }
+
+    #container>div>img {
+      border-radius: 5px 5px 0px 0px;
+      width: 100%;
+
+    }
+
+    button {
+      display: block;
+      text-align: center;
+
+
+      margin: auto;
+      margin-bottom: 20px;
+      margin-top: 10px;
+
+      padding: 5px 10px;
+
+      border-color: none;
+      border-radius: 8px;
+
+
+    }
+
+
+
+    button {
+
+
+      border-radius: 10px;
+      border-color: red;
+
+
+    }
+
+    button:hover {
+      background-color: red;
+      border-color: red;
+      color: white;
+    }
+
+
+    #container>div>p:nth-child(3),
+    s {
+      font-size: xx-large;
+
+    }
+
+    #container>div>p:nth-child(2) {
+      font-size: 22px;
+
+    }
+
+
+    button:last-child {
+
+
+      border-radius: 10px;
+      border-color: none;
+      color: white;
+
+
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+  <div id="container">
+
+  </div>
+
+
+</body>
+
+</html>
+
+<script>
+
+  let arr = JSON.parse(localStorage.getItem("ProductsData"));
+
+  arr.map(function (el, index) {
+
+    let div = document.createElement("div")
+
+    let div2 = document.createElement("div")
+    div2.setAttribute("class", "product")
+
+    let img = document.createElement("img")
+    img.setAttribute("src", el.url)
+
+    let name = document.createElement("h3");
+    name.innerText = el.name;
+
+    let category = document.createElement("p");
+    category.innerText = el.category;
+
+    let gender = document.createElement("p");
+    gender.innerText = el.gender;
+
+    let price = document.createElement("h2");
+    price.innerText = el.price;
+
+    let remove = document.createElement("button");
+    remove.innerText = "Remove";
+    remove.addEventListener("click", function () {
+      deletitem(index);
+    });
+
+    let sold = document.createElement("button");
+
+    sold.setAttribute("class", "product")
+    if (el.sold == "true") {
+      sold.style.backgroundColor = "red";
+      sold.innerText = "SOLD"
+    } else {
+      sold.innerText = "Availabel"
+      sold.style.backgroundColor = "green";
+    }
+
+    div2.append(name, category, gender, price, remove, sold);
+    div.append(img, div2);
+    document.querySelector("#container").append(div);
+
+  });
+
+  function deletitem(index) {
+    arr.splice(index, 1);
+    localStorage.setItem("ProductsData", JSON.stringify(arr));
+    window.location.reload();
+  }
+
+
+
+</script>

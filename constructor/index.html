@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor</title>
+</head>
+
+<body>
+
+    <form action="">
+
+        <input id="name" type="text" placeholder="Product Name"><br>
+        <input id="category" type="text" placeholder="category"><br>
+        <input id="image" type="url" placeholder="URL"><br>
+        <input id="price" type="number" placeholder="Price"><br>
+
+
+        <select name="" id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <br>
+        <select name="" id="sold">
+            <option value="true">Sold</option>
+            <option value="false">Availabel</option>
+        </select>
+        <br>
+
+        <input id="add" type="submit">
+
+    </form>
+
+</body>
+
+</html>
+
+<script>
+  let arr = JSON.parse(localStorage.getItem("ProductsData")) || [];
+
+let form = document.querySelector("form")
+form.addEventListener("submit", submitFUNK)
+
+function submitFUNK(e) {
+    e.preventDefault();
+
+    let name = form.name.value;
+    let category = form.category.value;
+    let url = form.image.value;
+    let price = form.price.value;
+
+    let gender = form.gender.value;
+    let sold = form.sold.value;
+
+
+
+    let Product = new NewProduct(name, category, url, price, gender, sold);
+    arr.push(Product)
+    alert("data added to product page")
+    localStorage.setItem("ProductsData", JSON.stringify(arr))
+    window.open("product.html", "_self")
+
+
+
+}
+
+function NewProduct(n, c, u, p, g, s) {
+    this.name = n;
+    this.category = c;
+    this.url = u;
+    this.price = p;
+    this.gender = g;
+    this.sold = s;
+}
+
+
+</script>
