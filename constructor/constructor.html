@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+</body>
+
+</html>
+
+<script>
+
+    ///// NORMAL FUNCTION
+    function NikeProduct(n, t, p) {
+
+        let obj = {
+            Name: n,
+            Price: t,
+            Type: p,
+        }
+
+    }
+    let X = NikeProduct("shoe", "sneaker", 3000);
+    console.log("X:", X)
+
+
+
+
+    ///// CONSTRUCTOR FUNCTION
+    function nikeProduct(n, t, p) {
+
+        this.name = n;
+        this.type = t;
+        this.price = p;
+
+    }
+
+    //new >>> return
+    /// this == {}
+    let y = new nikeProduct("shoe", "sneaker", 3000);
+    console.log("y:", y)
+
+
+
+
+
+</script>
