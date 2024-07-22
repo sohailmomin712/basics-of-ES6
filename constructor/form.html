@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="text" id="name" placeholder="enter product name">
+        <input type="text" id="brand" placeholder="enter brand name">
+        <input type="text" id="price" placeholder="enter price">
+        <button id="btn">submit btn</button>
+    </form>
+</body>
+
+</html>
+<script>
+    let productArr = []
+    let form = document.querySelector("form")
+    form.addEventListener("submit", productData)
+
+    function productData(e) {
+        e.preventDefault()
+        let name = form.name.value;
+        let brand = form.brand.value;
+        let price = form.price.value
+
+        let productsObj = new productsDetail(name, brand, price);
+        productArr.push(productsObj)
+    }
+
+    function productsDetail(n, b, p) {
+        this.name = n;
+        this.brand = b;
+        this.price = p
+
+    }
+
+    console.log(productArr)
+
+
+
+
+    // function Submit(e) {
+
+    //     e.preventDefault()
+
+    //     let form = document.getElementById("form");
+    //     let name = form.name.value;
+    //     let price = form.price.value;
+
+
+    //     let product = new EccomProduct(name, price);
+    //     array.push(product)
+
+
+    // }
+
+
+
+    // function EccomProduct(n, p) {
+    //     this.name = n;
+    //     this.price = p;
+
+    // }
+
+    // console.log(array)
+</script>
