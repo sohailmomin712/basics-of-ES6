@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    ///// CONSTRUCTOR FUNCTION
+    let ProductData = []
+    
+    function ProductDetails(n, t, p) {
+        this.Productname = n;
+        this.Producttype = t;
+        this.Price = p;
+
+    }
+    //new >>> return
+    /// this == {}
+    let one = new ProductDetails("Sneaker", "Shoes", 3000);
+    let two = new ProductDetails("Bata", "Sandle", 600);
+    let three = new ProductDetails("LFG", "Slupper", 900);
+
+
+    ProductData.push(one, two, three)
+    console.log(ProductData)
+
+</script>
